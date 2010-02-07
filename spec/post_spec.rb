@@ -27,4 +27,11 @@ describe Post do
     Post['foo'].body.should == 'Hello from foo!'
   end
 
+  it 'should markdownify the body of a post' do
+    Post.dir = File.dirname(__FILE__) + '/posts3'
+    
+    Post['hello'].body.should == '*How* __goes__ `it`?'
+    Post['hello'].html.should == '<p><em>How</em> <strong>goes</strong> <code>it</code>?</p>'
+  end
+
 end

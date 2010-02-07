@@ -1,3 +1,5 @@
+require 'maruku'
+
 class Post
 
   class << self
@@ -24,6 +26,10 @@ class Post
   def initialize filename
     @name = File.basename filename
     @body = File.read(filename).strip
+  end
+
+  def html
+    Maruku.new(body).to_html
   end
 
 end

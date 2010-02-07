@@ -2,4 +2,5 @@
 
 %ul
   - for post in @posts
-    %li= post.name
+    %li
+      %a{ :href => "/#{ post.name }" }= post.name
