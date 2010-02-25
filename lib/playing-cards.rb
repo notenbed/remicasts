@@ -11,30 +11,26 @@ class Deck < Array
   end
 
   def draw_from_top num = 1
-    if num.is_a?(Card)
-      delete num
-    else
-      if num == 1
-        shift
-      else
-        cards = []
-        num.times { cards << shift }
-        cards
-      end
-    end
+    _draw num, :shift
   end
 
   alias draw draw_from_top
 
   def draw_from_bottom num = 1
+    _draw num, :pop
+  end
+
+private
+
+  def _draw num, operation
     if num.is_a?(Card)
       delete num
     else
       if num == 1
-        pop
+        send(operation)
       else
         cards = []
-        num.times { cards << pop }
+        num.times { cards << send(operation) }
         cards
       end
     end
