@@ -20,7 +20,40 @@ describe Deck do
     deck.last.should  == TheAceOfSpades
   end
 
-  it 'can shuffle a deck'
+  it 'can compare decks' do
+    deck1 = Deck.new
+    deck2 = Deck.new
+    deck1.should == deck2
+
+    deck1 << The2OfClubs
+    deck1.should_not == deck2
+
+    deck2 << The2OfClubs
+    deck1.should == deck2
+  end
+
+  it 'can shuffle a deck' do
+    deck = Deck.standard
+    deck.first.should  == The2OfClubs
+    deck.length.should == 52
+
+    shuffled = deck.shuffle
+    shuffled.length.should == 52
+    deck.each do |card|
+      shuffled.should include(card)
+    end
+
+    shuffled.should_not == deck
+  end
+
+  it 'can shuffle! a deck' do
+    deck = Deck.standard
+    deck.should == Deck.standard
+
+    deck.shuffle!
+
+    deck.should_not == Deck.standard
+  end
 
   it 'can draw from a deck'
 
