@@ -55,13 +55,64 @@ describe Deck do
     deck.should_not == Deck.standard
   end
 
-  it 'can draw from a deck'
+  it 'can draw from a deck' do
+    deck = Deck.standard
+    deck.length.should == 52
 
-  it 'can draw a particular number of cards from a deck'
+    card = deck.draw
 
-  it 'can draw from the bottom of a deck'
+    card.should == The2OfClubs
+    deck.length.should == 51
+  end
 
-  it 'can draw a particular card from a deck'
+  it 'can draw from a deck from the top or bottom' do
+    deck = Deck.standard
+    deck.length.should == 52
+
+    deck.draw_from_top.should == The2OfClubs
+    deck.length.should == 51
+
+    deck.draw_from_bottom.should == TheAceOfSpades
+    deck.length.should == 50
+  end
+
+  it 'can draw a particular number of cards from a deck' do
+    deck = Deck.standard
+    
+    cards = deck.draw 2
+
+    deck.length.should == 50
+    cards.length.should == 2
+    cards[0].should == The2OfClubs
+    cards[1].should == The3OfClubs
+
+    cards = deck.draw_from_bottom 2
+
+    deck.length.should == 48
+    cards.length.should == 2
+    cards[0].should == TheAceOfSpades
+    cards[1].should == TheKingOfSpades
+  end
+
+  it 'can draw a particular card from a deck' do
+    deck = Deck.standard
+
+    card = deck.draw The3OfClubs
+    card.should == The3OfClubs
+    deck.length.should == 51
+    deck[0].should == The2OfClubs
+    deck[1].should == The4OfClubs
+
+    deck.draw(The3OfClubs).should be_nil
+
+    card = deck.draw_from_bottom(TheKingOfSpades)
+    card.should == TheKingOfSpades
+    deck.length.should == 50
+    deck[49].should == TheAceOfSpades
+    deck[48].should == TheQueenOfSpades
+
+    deck.draw_from_bottom(TheKingOfSpades).should be_nil
+  end
 
   it 'can deal cards into piles'
 

@@ -10,6 +10,36 @@ class Deck < Array
     deck
   end
 
+  def draw_from_top num = 1
+    if num.is_a?(Card)
+      delete num
+    else
+      if num == 1
+        shift
+      else
+        cards = []
+        num.times { cards << shift }
+        cards
+      end
+    end
+  end
+
+  alias draw draw_from_top
+
+  def draw_from_bottom num = 1
+    if num.is_a?(Card)
+      delete num
+    else
+      if num == 1
+        pop
+      else
+        cards = []
+        num.times { cards << pop }
+        cards
+      end
+    end
+  end
+
 end
 
 
