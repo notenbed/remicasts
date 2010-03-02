@@ -17,6 +17,8 @@ describe GoFish do
 
   it 'player should not be able to ask for a rank that is not in their hand'
 
+  it 'player should not be able to ask themselves for cards'
+
   it '@player should be able to ask another @player for a rank (Go Fish!)' do
     @game.draw_pile = [The2ofClubs, The3ofClubs]
     @player1.hand   = [The3ofHearts, TheJackOfSpades]
@@ -91,6 +93,28 @@ describe GoFish do
     @player1.books  = ['Jack', 'Queen', '3']
     @player2.books  = ['2', '4', '5', '7']
     @game.winner.should == @player2
+  end
+
+  it 'should be able to play!' do
+    @game.turn.player.should == @player1
+    @game.turn.count.should  == 0
+
+    @player1.hand = [The3ofSpades]
+    @player1.ask_player_for_rank @player2, '3'
+
+    @game.turn.player.should == @player2
+    @game.turn.count.should  == 1
+
+    # player cannot go out of turn!
+    @player1.hand = [The3ofSpades]
+    lambda { @player1.ask_player_for_rank @player2, '3' }.should raise_error(/turn/i)
+
+    # the player whose turn it is can fo
+    @player2.hand = [The4OfClubs]
+    @player2.ask_player_for_rank @player1, '4'
+
+    @game.turn.player.should == @player1
+    @game.turn.count.should  == 2
   end
 
 end

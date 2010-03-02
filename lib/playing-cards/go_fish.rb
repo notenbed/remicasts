@@ -1,5 +1,34 @@
 module GoFish
 
+  class TurnTracker
+    attr_accessor :game, :count
+
+    def initialize game
+      @game  = game
+      @count = 0
+    end
+
+    def player
+      if @last_player
+        index_of_last_player = game.players.index @last_player
+        next_player = game.players[index_of_last_player + 1]
+        next_player = game.players.first unless next_player
+        return next_player
+      else
+        game.players.first
+      end
+    end
+
+    def take! player_taking_turn
+      if player_taking_turn != player
+        raise "It's not your turn!"
+      else
+        @last_player = player_taking_turn
+        @count += 1
+      end
+    end
+  end
+
   class Player
     attr_accessor :game, :hand, :books
 
@@ -13,6 +42,8 @@ module GoFish
     end
 
     def ask_player_for_rank another_player, rank
+      game.turn.take!(self)
+
       matching_cards = another_player.hand.select {|card| card.rank == rank.to_s }
 
       if matching_cards.empty?
@@ -44,13 +75,14 @@ module GoFish
   end
 
   class Game
-    attr_accessor :players, :draw_pile
+    attr_accessor :players, :draw_pile, :turn
 
     def draw_pile= value
       @draw_pile = value.to_deck
     end
 
     def initialize number_of_players
+      @turn      = TurnTracker.new(self)
       @draw_pile = Deck.standard.shuffle!
       @players = []
       number_of_players.times do
