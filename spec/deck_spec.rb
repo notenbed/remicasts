@@ -114,11 +114,6 @@ describe Deck do
     deck.draw_from_bottom(TheKingOfSpades).should be_nil
   end
 
-  it 'can deal cards into piles' do
-    pending "Next Screencast!"
-
-    deck = Deck.standard
-    # ... place to start next time!
-  end
+  it 'should test that Deck() and Deck[] and Array#to_deck work!'
 
 end
