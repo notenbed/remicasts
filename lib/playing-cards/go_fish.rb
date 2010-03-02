@@ -48,8 +48,10 @@ module GoFish
 
       if matching_cards.empty?
         hand << game.draw_pile.draw
+        puts "Go Fish! (#{ hand.last.inspect })"
       else
         matching_cards.each do |card|
+          puts "You got: #{ card.inspect }"
           hand << another_player.hand.draw(card)
         end
       end
