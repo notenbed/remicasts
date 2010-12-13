@@ -3,17 +3,18 @@
  ( User request
    from Browser )
 
-                    RAW                   STANDARD
+                    RAW                    STANDARD
 
-  HTTP Request --(request)--> [SERVER] ---(request)---> [Web Application]
+  HTTP Request --(request)---> [SERVER] ---(request)---> [Web Application]
 
                 Apache or IIS                            ASP.NET web app
               which has a module                         or Sinatra or ?
-               for calling apps
-
-
-
-
+               for calling apps                                |
+                                                               |
+                                                               |
+							   App needs to
+							return a response
+ HTTP Response --(response)--> [SERVER] <--(response)----
 
 
 
