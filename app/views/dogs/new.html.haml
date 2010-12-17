@@ -1,0 +1,11 @@
+%h1 Adding a new dog
+
+= form_for @dog do |f|
+
+  = f.label      :name
+  = f.text_field :name
+
+  = f.label      :breed
+  = f.text_field :breed
+
+  = f.submit 'Add Dog'
