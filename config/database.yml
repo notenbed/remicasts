@@ -10,11 +10,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  database: bdd_rails
-  username: root
-  password: testing
-  socket: /var/run/mysqld/mysqld.sock
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+#  adapter: mysql2
+#  database: bdd_rails
+#  username: root
+#  password: testing
+#  socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: sqlite3
