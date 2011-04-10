@@ -1,0 +1,6 @@
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\bin\Debug\TaskMan.exe
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.exe
+C:\Users\remi\screencasts\TaskMan\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.exe
