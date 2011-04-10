@@ -1,0 +1,5 @@
+C:\Users\remi\screencasts\Intro to .NET\ClideConsole\bin\Debug\ClideConsole.exe
+C:\Users\remi\screencasts\Intro to .NET\ClideConsole\bin\Debug\ClideConsole.pdb
+C:\Users\remi\screencasts\Intro to .NET\ClideConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\remi\screencasts\Intro to .NET\ClideConsole\obj\Debug\ClideConsole.exe
+C:\Users\remi\screencasts\Intro to .NET\ClideConsole\obj\Debug\ClideConsole.pdb

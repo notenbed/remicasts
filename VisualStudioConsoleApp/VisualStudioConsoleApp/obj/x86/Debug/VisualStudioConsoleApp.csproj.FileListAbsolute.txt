@@ -1,0 +1,5 @@
+C:\Users\remi\screencasts\Intro to .NET\VisualStudioConsoleApp\VisualStudioConsoleApp\bin\Debug\VisualStudioConsoleApp.exe
+C:\Users\remi\screencasts\Intro to .NET\VisualStudioConsoleApp\VisualStudioConsoleApp\bin\Debug\VisualStudioConsoleApp.pdb
+C:\Users\remi\screencasts\Intro to .NET\VisualStudioConsoleApp\VisualStudioConsoleApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\remi\screencasts\Intro to .NET\VisualStudioConsoleApp\VisualStudioConsoleApp\obj\x86\Debug\VisualStudioConsoleApp.exe
+C:\Users\remi\screencasts\Intro to .NET\VisualStudioConsoleApp\VisualStudioConsoleApp\obj\x86\Debug\VisualStudioConsoleApp.pdb

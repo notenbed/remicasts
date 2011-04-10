@@ -1,0 +1,9 @@
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\SharpDevelopBooConsole.exe
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\SharpDevelopBooConsole.pdb
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\Boo.Lang.Useful.dll
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\Boo.Lang.Compiler.dll
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\Boo.Lang.dll
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\bin\Debug\Boo.Lang.Parser.dll
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\obj\x86\Debug\SharpDevelopBooConsole.exe
+C:\Users\remi\screencasts\Intro to .NET\SharpDevelopBooConsole\SharpDevelopBooConsole\obj\x86\Debug\SharpDevelopBooConsole.pdb

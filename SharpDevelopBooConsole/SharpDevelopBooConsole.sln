@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.0.0.7070
+Project("{A33008B1-5DAC-44D5-9060-242E3B6E38F2}") = "SharpDevelopBooConsole", "SharpDevelopBooConsole\SharpDevelopBooConsole.booproj", "{AECFCF31-F134-4327-9D93-029618191755}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AECFCF31-F134-4327-9D93-029618191755}.Debug|x86.Build.0 = Debug|x86
+		{AECFCF31-F134-4327-9D93-029618191755}.Debug|x86.ActiveCfg = Debug|x86
+		{AECFCF31-F134-4327-9D93-029618191755}.Release|x86.Build.0 = Release|x86
+		{AECFCF31-F134-4327-9D93-029618191755}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal
