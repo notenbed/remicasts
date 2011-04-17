@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="bin/Debug/MyGeneratedLibrary.Specs.dll" total="2" failures="1" not-run="0" date="2011-04-16" time="18:15:14">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Unix 2.6.35.22" platform="Unix" cwd="/home/remi/clide/MyGeneratedLibrary" machine-name="remi" user="remi" user-domain="remi" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="bin/Debug/MyGeneratedLibrary.Specs.dll" success="False" time="0.223" asserts="0">
+    <results>
+      <test-suite name="MyGeneratedLibrary" success="False" time="0.220" asserts="0">
+        <results>
+          <test-suite name="Specs" success="False" time="0.176" asserts="0">
+            <results>
+              <test-suite name="WhateverSpec" success="False" time="0.173" asserts="0">
+                <results>
+                  <test-case name="MyGeneratedLibrary.Specs.WhateverSpec.should_fail" executed="True" success="False" time="0.100" asserts="1">
+                    <failure>
+                      <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+                      <stack-trace><![CDATA[at NUnit.Framework.ShouldExtensions.Should (System.Object o, IResolveConstraint constraint) [0x00000] in <filename unknown>:0
+at NUnit.Framework.ShouldExtensions.ShouldEqual[Boolean] (Boolean a, Boolean b) [0x00000] in <filename unknown>:0
+at MyGeneratedLibrary.Specs.WhateverSpec.should_fail () [0x00000] in /home/remi/clide/MyGeneratedLibrary/spec/MyGeneratedLibrarySpec.cs:16
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0] in /home/remi/mono-src/mono/mcs/class/corlib/System.Reflection/MonoMethod.cs:226
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="MyGeneratedLibrary.Specs.WhateverSpec.should_pass" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

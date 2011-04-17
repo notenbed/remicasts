@@ -1,0 +1,4 @@
+/home/remi/clide/MyWebSite/MySite/bin/MySite.dll.mdb
+/home/remi/clide/MyWebSite/MySite/bin/MySite.dll
+/home/remi/clide/MyWebSite/MySite/obj/Debug/MySite.dll
+/home/remi/clide/MyWebSite/MySite/obj/Debug/MySite.dll.mdb

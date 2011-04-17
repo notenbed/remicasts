@@ -1,0 +1,4 @@
+/home/remi/clide/MyLibrary/bin/Debug/MyLibrary.Specs.dll.mdb
+/home/remi/clide/MyLibrary/bin/Debug/MyLibrary.Specs.dll
+/home/remi/clide/MyLibrary/spec/obj/Debug/MyLibrary.Specs.dll
+/home/remi/clide/MyLibrary/spec/obj/Debug/MyLibrary.Specs.dll.mdb

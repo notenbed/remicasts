@@ -1,0 +1,4 @@
+/home/remi/clide/MyLibrary/bin/Debug/MyLibrary.dll.mdb
+/home/remi/clide/MyLibrary/bin/Debug/MyLibrary.dll
+/home/remi/clide/MyLibrary/src/obj/Debug/MyLibrary.dll
+/home/remi/clide/MyLibrary/src/obj/Debug/MyLibrary.dll.mdb
