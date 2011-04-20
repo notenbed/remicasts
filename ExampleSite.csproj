@@ -76,6 +76,7 @@
       <HintPath>..\lib\MVC3\System.Web.WebPages.Razor.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="$(MOO_DIR)/packages/TheFlash-0.1.0.0/lib/TheFlash.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

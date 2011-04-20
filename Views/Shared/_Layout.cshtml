@@ -7,6 +7,10 @@
       <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
   </head>
   <body>
+    <p>My Awesome Site (<em>with lots of functionality!</em>)</p>
+    @if (! string.IsNullOrEmpty(@Html.FlashMessage())) {
+      <h2>@Html.FlashMessage()</h2>
+    }
     <nav>
       <ul>
         <li>@Html.RouteLink("Home", "Default")</li>

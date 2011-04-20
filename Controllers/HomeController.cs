@@ -1,5 +1,6 @@
 using System;
 using System.Web.Mvc;
+using TheFlash;
 
 namespace ExampleSite {
 	public class HomeController : BaseController {
@@ -15,12 +16,14 @@ namespace ExampleSite {
 		// GET /login
 		public ActionResult Login(User user) {
 			LoginAs(user);
+			this.Flash("You gotted logged in!");
 			return RedirectToRoute("Default");
 		}
 
 		// GET /logout
 		public ActionResult Logout() {
 			ResetSession();
+			this.Flash("Thank you!  Come again!");
 			return RedirectToRoute("Default");
 		}
 	}
