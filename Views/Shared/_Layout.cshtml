@@ -1,0 +1,24 @@
+﻿@{ var c = ViewContext.Controller as BaseController; }
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>@ViewBag.Title</title>
+      <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+      <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>@Html.RouteLink("Home", "Default")</li>
+        @if (c.LoggedIn) {
+          <li>@Html.RouteLink("Logout", "Logout")</li>
+        } else {
+          <li>@Html.RouteLink("Login", "Login")</li>
+        }
+      </ul>
+    </nav>
+    <section id="content">
+      @RenderBody()
+    </section>
+  </body>
+</html>
