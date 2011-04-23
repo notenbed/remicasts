@@ -1,0 +1,12 @@
+﻿@model Dog
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New Dog</h2>
+
+@using (Html.BeginForm("Create", "Dogs")) {
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    <input type="submit" value="Create" />
+}

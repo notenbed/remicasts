@@ -1,0 +1,18 @@
+﻿@model IList<Dog>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listing Dogs</h2>
+
+@Html.ActionLink("Add Dog", "New")
+
+@if (Model.Count == 0) {
+    <p>No dogs</p>   
+} else {
+    <ul>
+        @foreach (var dog in Model) {
+            <li>@dog.Name</li>   
+        }
+    </ul>
+}
