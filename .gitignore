@@ -1,0 +1,6 @@
+obj
+bin
+*.sw?
+*.user
+*.suo
+packages

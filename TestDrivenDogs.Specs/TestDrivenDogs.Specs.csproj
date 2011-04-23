@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{820D1614-D238-4F38-9A6B-6FF2E0EAA035}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestDrivenDogs.Specs</RootNamespace>
+    <AssemblyName>TestDrivenDogs.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara.Drivers.WebClient">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.Drivers.WebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara.Drivers.WebDriver">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.Drivers.WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara.NUnit">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara.Servers.Cassini">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.Servers.Cassini.dll</HintPath>
+    </Reference>
+    <Reference Include="Mara.Servers.XSP">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.Servers.XSP.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="NUnit.Should">
+      <HintPath>..\packages\NUnit.Should.1.0.2.0\lib\NET30\NUnit.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Requestor">
+      <HintPath>..\packages\Requestor.1.0.2.2\lib\Requestor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver.Chrome">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.Chrome.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Common">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Firefox">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.Firefox.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.IE">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.IE.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Remote">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.Remote.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Remote.Common">
+      <HintPath>..\packages\Mara.1.0.0.3\lib\WebDriver.Remote.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HomePageSpec.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestDrivenDogs\TestDrivenDogs.csproj">
+      <Project>{716EBF60-922E-49F4-BE68-08AED50A541A}</Project>
+      <Name>TestDrivenDogs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
