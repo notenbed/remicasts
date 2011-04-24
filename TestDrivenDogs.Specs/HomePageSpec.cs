@@ -25,7 +25,7 @@ namespace TestDrivenDogs.Specs {
 		public void Before() {
 			new DogsContext().Database.ExecuteSqlCommand("DELETE FROM Dogs");
 			CurrentDriver = new Mara.Drivers.WebClient();
-			Root          = "http://localhost:50486";
+			Root          = "http://tdd-dogs";
 		}
 
 		[Test]
