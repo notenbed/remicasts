@@ -6,14 +6,11 @@ using System.Web.Mvc;
 
 namespace TestDrivenDogs
 {
-    public class DogsController : Controller
+    public class DogsController : BaseController
     {
-        //
-        // GET: /Dogs/
-
         public ActionResult Index()
         {
-            return View(new DogsContext().Dogs.ToList());
+            return View(Context.Dogs.ToList());
         }
 
 		public ActionResult New() {
@@ -21,9 +18,8 @@ namespace TestDrivenDogs
 		}
 
 		public ActionResult Create(Dog dog) {
-			var db = new DogsContext();
-			db.Dogs.Add(dog);
-			db.SaveChanges();
+			Context.Dogs.Add(dog);
+			Context.SaveChanges();
 			return RedirectToAction("Index");
 		}
     }

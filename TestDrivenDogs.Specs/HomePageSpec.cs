@@ -6,27 +6,8 @@ using NUnit.Framework;
 
 namespace TestDrivenDogs.Specs {
 
-	[SetUpFixture]
-	public class SpecSetup {
-		[SetUp]
-		public void BeforeAll() {
-			
-		}
-		[TearDown]
-		public void AfterAll() {
-
-		}
-	}
-
 	[TestFixture]
-	public class HomePageSpec : Mara.MaraTest {
-
-		[SetUp]
-		public void Before() {
-			new DogsContext().Database.ExecuteSqlCommand("DELETE FROM Dogs");
-			CurrentDriver = new Mara.Drivers.WebClient();
-			Root          = "http://tdd-dogs";
-		}
+	public class HomePageSpec : WebSpec {
 
 		[Test]
 		public void should_display_application_title() {
