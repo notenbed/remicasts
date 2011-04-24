@@ -4,16 +4,10 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace TestDrivenDogs.Specs {
+namespace TestDrivenDogs.Specs.Web {
 
 	[TestFixture]
-	public class HomePageSpec : WebSpec {
-
-		[Test]
-		public void should_display_application_title() {
-			Visit("/");
-			Page.Body.ShouldContain("Test-Driven Dogs");
-		}
+	public class ManagingDogsSpec : WebSpec {
 
 		[Test]
 		public void can_view_list_of_dogs() {
@@ -43,6 +37,21 @@ namespace TestDrivenDogs.Specs {
 
 			db.Dogs.Count().ShouldEqual(1);
 			db.Dogs.First().Name.ShouldEqual("Spot");
+		}
+
+		[Test]
+		public void cant_create_invalid_dog() {
+			var db = new DogsContext();
+			db.Dogs.Count().ShouldEqual(0);
+
+			Visit("/");
+			Click("Dogs");
+			Click("Add Dog");
+			FillIn("Name", string.Empty);
+			Click("Create");
+
+			db.Dogs.Count().ShouldEqual(0);
+			Page.Body.ShouldContain("The Name field is required.");
 		}
 	}
 }

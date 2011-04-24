@@ -18,6 +18,9 @@ namespace TestDrivenDogs
 		}
 
 		public ActionResult Create(Dog dog) {
+			if (! ModelState.IsValid)
+				return View("New", dog);
+
 			Context.Dogs.Add(dog);
 			Context.SaveChanges();
 			return RedirectToAction("Index");

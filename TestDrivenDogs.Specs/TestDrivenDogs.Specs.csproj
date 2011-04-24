@@ -58,6 +58,9 @@
     <Reference Include="Mara.Servers.XSP">
       <HintPath>..\packages\Mara.1.0.0.3\lib\Mara.Servers.XSP.dll</HintPath>
     </Reference>
+    <Reference Include="Model.IsValid">
+      <HintPath>..\packages\Model.IsValid.0.1.0.0\lib\Model.IsValid.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Mara.1.0.0.3\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -81,6 +84,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -106,11 +110,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DogSpec.cs" />
+    <Compile Include="Web\ManagingDogsSpec.cs" />
     <Compile Include="SpecHelper.cs" />
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <Compile Include="HomePageSpec.cs" />
+    <Compile Include="Web\HomePageSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
