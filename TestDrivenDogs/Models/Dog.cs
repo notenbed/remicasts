@@ -6,9 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TestDrivenDogs {
 	public class Dog {
+
 		public int Id { get; set; }
 
-		[Required][MustBeAwesome]
+		[Required][MustBeAwesome][Unique]
 		public string Name { get; set; }
 	}
 }

@@ -8,7 +8,7 @@ using Model.IsValid;
 namespace TestDrivenDogs.Specs.Model {
 	
 	[TestFixture]
-	public class DogSpec {
+	public class DogSpec : ModelSpec {
 
 		[Test]
 		public void requires_name() {
@@ -30,6 +30,21 @@ namespace TestDrivenDogs.Specs.Model {
 
 			dog.Name = "Awesome Rover";
 			dog.IsValid().Should(Be.True);
+		}
+
+		[Test]
+		public void requires_unique_name() {
+			var rover1 = new Dog { Name = "Awesome Rover" };
+			Context.Dogs.Add(rover1);
+			Context.SaveChanges();
+			Context.Dogs.Count().ShouldEqual(1);
+
+			var rover2 = new Dog { Name = "Awesome Rover" };
+			rover2.IsValid().Should(Be.False);
+			rover2.ErrorMessagesFor("Name").ShouldContain("Name already taken");
+
+			var spot = new Dog { Name = "Awesome Spot" };
+			spot.IsValid().Should(Be.True);
 		}
 	}
 }

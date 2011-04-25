@@ -42,4 +42,19 @@ namespace TestDrivenDogs.Specs {
 		[TearDown]
 		public void AfterEach() {}
 	}
+
+	public class ModelSpec {
+
+		public DogsContext Context { get; set; }
+
+		[SetUp]
+		public void BeforeEach() {
+			SpecSetup.RefreshContext();
+			SpecSetup.TruncateAllTables(); // TODO - make transactional
+			Context       = MvcApplication.CurrentDogsContext;
+		}
+
+		[TearDown]
+		public void AfterEach() {}
+	}
 }
