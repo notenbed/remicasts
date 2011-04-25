@@ -10,15 +10,22 @@ namespace TestDrivenDogs.Specs.Model {
 	[TestFixture]
 	public class DogSpec : ModelSpec {
 
+		public static Dog ValidDog {
+			get {
+				return new Dog {
+					Name  = "Awesome Rover",
+					Breed = "Golden Retriever",
+					VetId = 5,
+					RegisteredAt = DateTime.Now,
+					UniqueId     = Guid.NewGuid()
+				};
+			}
+		}
+
 		[Test]
 		public void requires_name() {
-			var dog = new Dog {
-				Name  = null,
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var dog = ValidDog;
+			dog.Name = null;
 
 			dog.IsValid().Should(Be.False);
 			dog.ErrorMessagesFor("Name").ShouldContain("The Name field is required.");
@@ -29,13 +36,8 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_name_to_be_awesome() {
-			var dog = new Dog {
-				Name  = "Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var dog = ValidDog;
+			dog.Name = "Rover";
 
 			dog.IsValid().Should(Be.False);
 			dog.ErrorMessagesFor("Name").ShouldContain("Name must be awesome!");
@@ -46,46 +48,26 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_unique_name() {
-			var rover1 = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var rover1 = ValidDog;
+			rover1.Name = "Awesome Rover";
 			Context.Dogs.Add(rover1);
 			Context.SaveChanges();
 			Context.Dogs.Count().ShouldEqual(1);
 
-			var rover2 = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var rover2 = ValidDog;
+			rover2.Name = "Awesome Rover";
 			rover2.IsValid().Should(Be.False);
 			rover2.ErrorMessagesFor("Name").ShouldContain("Name already taken");
 
-			var spot = new Dog {
-				Name  = "Awesome Spot",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var spot = ValidDog;
+			spot.Name = "Awesome Spot";
 			spot.IsValid().Should(Be.True);
 		}
 
 		[Test]
 		public void requires_breed() {
-			var dog = new Dog {
-				Name  = "Awesome Rover",
-				Breed = null,
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var dog = ValidDog;
+			dog.Breed = null;
 			dog.IsValid().Should(Be.False);
 
 			dog.Breed = "Golden Retriever";
@@ -94,13 +76,8 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_vet_id() {
-			var dog = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = null,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
+			var dog = ValidDog;
+			dog.VetId = null;
 			dog.IsValid().Should(Be.False);
 
 			dog.VetId = 5;
@@ -109,13 +86,8 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_registered_at() {
-			var dog = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = null,
-				UniqueId     = Guid.NewGuid()
-			};
+			var dog = ValidDog;
+			dog.RegisteredAt = null;
 			dog.IsValid().Should(Be.False);
 
 			dog.RegisteredAt = DateTime.Now;
@@ -124,13 +96,8 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_unique_id() {
-			var dog = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = null
-			};
+			var dog = ValidDog;
+			dog.UniqueId = null;
 			dog.IsValid().Should(Be.False);
 
 			dog.UniqueId = Guid.NewGuid();
