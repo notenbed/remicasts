@@ -11,5 +11,17 @@ namespace TestDrivenDogs {
 
 		[Required][MustBeAwesome][Unique]
 		public string Name { get; set; }
+
+		[Required]
+		public string Breed { get; set; }
+
+		[Required]
+		public int? VetId { get; set; }
+
+		[Required]
+		public DateTime? RegisteredAt { get; set; }
+
+		[Required]
+		public Guid? UniqueId { get; set; }
 	}
 }

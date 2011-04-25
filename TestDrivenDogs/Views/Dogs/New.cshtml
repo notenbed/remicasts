@@ -8,7 +8,25 @@
 @Html.ValidationSummary()
 
 @using (Html.BeginForm("Create", "Dogs")) {
-    @Html.LabelFor(m => m.Name)
-    @Html.TextBoxFor(m => m.Name)
+    <div class="field">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div class="field">
+        @Html.LabelFor(m => m.Breed)
+        @Html.TextBoxFor(m => m.Breed)
+    </div>
+    <div class="field">
+        @Html.LabelFor(m => m.VetId)
+        @Html.TextBoxFor(m => m.VetId)
+    </div>
+    <div class="field">
+        @Html.LabelFor(m => m.RegisteredAt)
+        @Html.TextBoxFor(m => m.RegisteredAt)
+    </div>
+    <div class="field">
+        @Html.LabelFor(m => m.UniqueId)
+        @Html.TextBoxFor(m => m.UniqueId)
+    </div>
     <input type="submit" value="Create" />
 }

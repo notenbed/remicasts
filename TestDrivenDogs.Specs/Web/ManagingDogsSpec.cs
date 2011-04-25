@@ -16,7 +16,13 @@ namespace TestDrivenDogs.Specs.Web {
 			Page.Body.ShouldNotContain("Awesome Rover");
 
 			var db    = new DogsContext();
-			var rover = new Dog { Name = "Awesome Rover" };
+			var rover = new Dog {
+				Name  = "Awesome Rover",
+				Breed = "Golden Retriever",
+				VetId = 5,
+				RegisteredAt = DateTime.Now,
+				UniqueId     = Guid.NewGuid()
+			};
 			db.Dogs.Add(rover);
 			db.SaveChanges();
 
@@ -33,6 +39,10 @@ namespace TestDrivenDogs.Specs.Web {
 			Click("Dogs");
 			Click("Add Dog");
 			FillIn("Name", "Awesome Spot");
+			FillIn("Breed", "Golden Retriever");
+			FillIn("VetId", "5");
+			FillIn("RegisteredAt", DateTime.Now.ToString());
+			FillIn("UniqueId", Guid.NewGuid().ToString());
 			Click("Create");
 
 			db.Dogs.Count().ShouldEqual(1);
