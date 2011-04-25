@@ -27,7 +27,7 @@ namespace TestDrivenDogs.Specs {
 	}
 
 	public class WebSpec : Mara.MaraTest {
-
+		public Factories f = new Factories();
 		public DogsContext Context { get; set; }
 
 		[SetUp]
@@ -44,7 +44,7 @@ namespace TestDrivenDogs.Specs {
 	}
 
 	public class ModelSpec {
-
+		public Factories f = new Factories();
 		public DogsContext Context { get; set; }
 
 		[SetUp]

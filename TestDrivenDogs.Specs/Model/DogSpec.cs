@@ -10,29 +10,11 @@ namespace TestDrivenDogs.Specs.Model {
 	[TestFixture]
 	public class DogSpec : ModelSpec {
 
-		static int dogNameInt = 0;
-		public static int NextInt {
-			get { dogNameInt++; return dogNameInt; }
-		}
-
-		public static Dog ValidDog {
-			get {
-				return new Dog {
-					Name  = string.Format("Awesome Rover #{0}", NextInt),
-					Breed = "Golden Retriever",
-					VetId = 5,
-					RegisteredAt = DateTime.Now,
-					UniqueId     = Guid.NewGuid()
-				};
-			}
-		}
-
 		[Test]
 		public void can_create_valid_dogs() {
 			Context.Dogs.Count().ShouldEqual(0);
 			for (int i = 0; i < 3; i++) {
-				var dog = ValidDog;
-				Console.WriteLine("Creating dog ... there are {0} dogs", Context.Dogs.Count());
+				var dog = f.Dog.Build();
 				Context.Dogs.Add(dog);
 				Context.SaveChanges();
 			}
@@ -41,7 +23,7 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_name() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.Name = null;
 
 			dog.IsValid().Should(Be.False);
@@ -53,7 +35,7 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_name_to_be_awesome() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.Name = "Rover";
 
 			dog.IsValid().Should(Be.False);
@@ -65,25 +47,25 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_unique_name() {
-			var rover1 = ValidDog;
+			var rover1 = f.Dog.Build();
 			rover1.Name = "Awesome Rover";
 			Context.Dogs.Add(rover1);
 			Context.SaveChanges();
 			Context.Dogs.Count().ShouldEqual(1);
 
-			var rover2 = ValidDog;
+			var rover2 = f.Dog.Build();
 			rover2.Name = "Awesome Rover";
 			rover2.IsValid().Should(Be.False);
 			rover2.ErrorMessagesFor("Name").ShouldContain("Name already taken");
 
-			var spot = ValidDog;
+			var spot = f.Dog.Build();
 			spot.Name = "Awesome Spot";
 			spot.IsValid().Should(Be.True);
 		}
 
 		[Test]
 		public void requires_breed() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.Breed = null;
 			dog.IsValid().Should(Be.False);
 
@@ -93,7 +75,7 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_vet_id() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.VetId = null;
 			dog.IsValid().Should(Be.False);
 
@@ -103,7 +85,7 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_registered_at() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.RegisteredAt = null;
 			dog.IsValid().Should(Be.False);
 
@@ -113,7 +95,7 @@ namespace TestDrivenDogs.Specs.Model {
 
 		[Test]
 		public void requires_unique_id() {
-			var dog = ValidDog;
+			var dog = f.Dog.Build();
 			dog.UniqueId = null;
 			dog.IsValid().Should(Be.False);
 
