@@ -68,6 +68,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Validations\MustBeAwesomeAttribute.cs" />
     <Compile Include="Models\Dog.cs" />
     <Compile Include="Models\DogsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

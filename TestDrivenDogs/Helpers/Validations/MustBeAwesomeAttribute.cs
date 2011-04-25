@@ -12,8 +12,7 @@ namespace TestDrivenDogs {
 			else
 				return new ValidationResult(
 					string.Format("{0} must be awesome!", context.DisplayName), 
-					new string[]{ context.DisplayName }
-				);
+					new string[]{ context.DisplayName });
 		}
 	}
 }

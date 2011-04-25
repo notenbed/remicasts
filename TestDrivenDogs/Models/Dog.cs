@@ -8,7 +8,7 @@ namespace TestDrivenDogs {
 	public class Dog {
 		public int Id { get; set; }
 
-		[Required]
+		[Required][MustBeAwesome]
 		public string Name { get; set; }
 	}
 }

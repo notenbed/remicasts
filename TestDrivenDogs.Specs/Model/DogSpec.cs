@@ -16,6 +16,20 @@ namespace TestDrivenDogs.Specs.Model {
 
 			dog.IsValid().Should(Be.False);
 			dog.ErrorMessagesFor("Name").ShouldContain("The Name field is required.");
+
+			dog.Name = "Awesome Rover";
+			dog.IsValid().Should(Be.True);
+		}
+
+		[Test]
+		public void requires_name_to_be_awesome() {
+			var dog = new Dog { Name = "Rover" };
+
+			dog.IsValid().Should(Be.False);
+			dog.ErrorMessagesFor("Name").ShouldContain("Name must be awesome!");
+
+			dog.Name = "Awesome Rover";
+			dog.IsValid().Should(Be.True);
 		}
 	}
 }

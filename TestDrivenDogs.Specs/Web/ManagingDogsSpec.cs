@@ -13,15 +13,15 @@ namespace TestDrivenDogs.Specs.Web {
 		public void can_view_list_of_dogs() {
 			Visit("/");
 			Click("Dogs");
-			Page.Body.ShouldNotContain("Rover");
+			Page.Body.ShouldNotContain("Awesome Rover");
 
 			var db    = new DogsContext();
-			var rover = new Dog { Name = "Rover" };
+			var rover = new Dog { Name = "Awesome Rover" };
 			db.Dogs.Add(rover);
 			db.SaveChanges();
 
 			Refresh();
-			Page.Body.ShouldContain("Rover");
+			Page.Body.ShouldContain("Awesome Rover");
 		}
 
 		[Test]
@@ -32,11 +32,11 @@ namespace TestDrivenDogs.Specs.Web {
 			Visit("/");
 			Click("Dogs");
 			Click("Add Dog");
-			FillIn("Name", "Spot");
+			FillIn("Name", "Awesome Spot");
 			Click("Create");
 
 			db.Dogs.Count().ShouldEqual(1);
-			db.Dogs.First().Name.ShouldEqual("Spot");
+			db.Dogs.First().Name.ShouldEqual("Awesome Spot");
 		}
 
 		[Test]
