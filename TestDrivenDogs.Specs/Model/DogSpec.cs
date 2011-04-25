@@ -10,16 +10,33 @@ namespace TestDrivenDogs.Specs.Model {
 	[TestFixture]
 	public class DogSpec : ModelSpec {
 
+		static int dogNameInt = 0;
+		public static int NextInt {
+			get { dogNameInt++; return dogNameInt; }
+		}
+
 		public static Dog ValidDog {
 			get {
 				return new Dog {
-					Name  = "Awesome Rover",
+					Name  = string.Format("Awesome Rover #{0}", NextInt),
 					Breed = "Golden Retriever",
 					VetId = 5,
 					RegisteredAt = DateTime.Now,
 					UniqueId     = Guid.NewGuid()
 				};
 			}
+		}
+
+		[Test]
+		public void can_create_valid_dogs() {
+			Context.Dogs.Count().ShouldEqual(0);
+			for (int i = 0; i < 3; i++) {
+				var dog = ValidDog;
+				Console.WriteLine("Creating dog ... there are {0} dogs", Context.Dogs.Count());
+				Context.Dogs.Add(dog);
+				Context.SaveChanges();
+			}
+			Context.Dogs.Count().ShouldEqual(3);
 		}
 
 		[Test]
