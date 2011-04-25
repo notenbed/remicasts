@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories.cs" />
+    <Compile Include="Model\FactoriesSpec.cs" />
     <Compile Include="Model\DogSpec.cs" />
     <Compile Include="Web\ManagingDogsSpec.cs" />
     <Compile Include="SpecHelper.cs" />

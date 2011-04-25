@@ -9,7 +9,7 @@ namespace TestDrivenDogs.Specs.Model {
 	
 	[TestFixture]
 	public class DogSpec : ModelSpec {
-
+		
 		[Test]
 		public void can_create_valid_dogs() {
 			Context.Dogs.Count().ShouldEqual(0);
