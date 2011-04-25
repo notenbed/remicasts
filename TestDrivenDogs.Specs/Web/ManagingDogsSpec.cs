@@ -15,16 +15,7 @@ namespace TestDrivenDogs.Specs.Web {
 			Click("Dogs");
 			Page.Body.ShouldNotContain("Awesome Rover");
 
-			var db    = new DogsContext();
-			var rover = new Dog {
-				Name  = "Awesome Rover",
-				Breed = "Golden Retriever",
-				VetId = 5,
-				RegisteredAt = DateTime.Now,
-				UniqueId     = Guid.NewGuid()
-			};
-			db.Dogs.Add(rover);
-			db.SaveChanges();
+			f.Dog.Create(new { Name = "Awesome Rover" });
 
 			Refresh();
 			Page.Body.ShouldContain("Awesome Rover");
